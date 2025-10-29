@@ -8,4 +8,4 @@ RUN mkdir -p /var/log/kea && chmod 777 -R /var/log/kea
 
 COPY kea-dhcp4.conf.json /etc/kea/kea-dhcp4.conf
 
-CMD ["kea-dhcp4", "-c", "/etc/kea/kea-dhcp4.conf", "-f"]
+CMD ["kea-dhcp4", "-c", "/etc/kea/kea-dhcp4.conf", "-d"]
