@@ -1,0 +1,55 @@
+{
+  "Dhcp4": {
+    "interfaces-config": {
+      "interfaces": [
+        "*"
+      ]
+    },
+    "expired-leases-processing": {
+      "reclaim-timer-wait-time": 17,
+      "flush-reclaimed-timer-wait-time": 31,
+      "hold-reclaimed-time": 14400,
+      "max-reclaim-leases": 100,
+      "max-reclaim-time": 1000,
+      "unwarned-reclaim-cycles": 2
+    },
+    "renew-timer": 3600,
+    "rebind-timer": 36000,
+    "valid-lifetime": 86400,
+    "option-data": [
+      {
+        "name": "domain-name-servers",
+        "data": "1.1.1.1"
+      }
+    ],
+    "subnet4": [
+      {
+        "id": 1,
+        "subnet": "192.168.2.0/24",
+        "pools": [
+          {
+            "pool": "192.168.2.16 - 192.168.2.128"
+          }
+        ],
+        "option-data": [
+          {
+            "name": "routers",
+            "data": "192.168.2.1"
+          }
+        ]
+      }
+    ],
+    "loggers": [
+      {
+        "name": "kea-dhcp4",
+        "output_options": [
+          {
+            "output": "/var/log/kea/kea-dhcp4.log"
+          }
+        ],
+        "severity": "INFO",
+        "debuglevel": 0
+      }
+    ]
+  }
+}
